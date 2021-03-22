@@ -197,9 +197,17 @@ function beautifulStranger() {
 function forgeTheFellowShip() {
   console.log("8: forgeTheFellowShip");
   // create a new div called `'the-fellowship'` within `rivendell`
+  const fellowshipDiv = document.createElement("div");
+  fellowshipDiv.classList.add("the-fellowship");
+  document.querySelector("#rivendell").appendChild(fellowshipDiv);
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
-  // after each character is added make an alert that they // have joined your party
+  const allHobbitsAndBuddies = document.querySelectorAll("#rivendell li");
 
+  // after each character is added make an alert that they // have joined your party
+  for (element of allHobbitsAndBuddies) {
+    fellowshipDiv.appendChild(element);
+    alert(`${element.innerText} has joined the fellowship`)
+  }
   // NOTE: This won't change what you see in the browser.  Use your Elements tab of your Inspector tools to make sure that it worked.
 }
 
