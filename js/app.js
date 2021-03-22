@@ -206,7 +206,7 @@ function forgeTheFellowShip() {
   // after each character is added make an alert that they // have joined your party
   for (element of allHobbitsAndBuddies) {
     fellowshipDiv.appendChild(element);
-    // alert(`${element.innerText} has joined the fellowship`)
+    alert(`${element.innerText} has joined the fellowship`)
   }
   // NOTE: This won't change what you see in the browser.  Use your Elements tab of your Inspector tools to make sure that it worked.
 }
