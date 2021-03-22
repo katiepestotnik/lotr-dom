@@ -182,6 +182,8 @@ function beautifulStranger() {
   console.log("7: beautifulStranger");
 
   // change the `'Strider'` text to `'Aragorn'`
+  const ul = document.querySelector("#rivendell aside").firstChild.children[3];
+  ul.innerText = "Aragorn";
 }
 
 // COMMIT YOUR WORK
