@@ -140,7 +140,7 @@ function makeBuddies() {
 
   // create an `aside` tag
   const buddiesContainer = document.createElement("aside");
-  const buddiesUl = document.createElement("aside");
+  const buddiesUl = document.createElement("ul");
 
   // put an `unordered list` of the `'buddies'` in the aside
   for (buddie of buddies) {
@@ -166,6 +166,8 @@ function leaveTheShire() {
   console.log("6: leaveTheShire");
 
   // assemble the `hobbits` and move them to `rivendell`
+  const hobbits = document.querySelector("#the-shire ul");
+  document.querySelector("#rivendell aside").appendChild(hobbits);
 }
 
 // COMMIT YOUR WORK
