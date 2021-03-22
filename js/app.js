@@ -139,11 +139,19 @@ function makeBuddies() {
   console.log("5: makeBuddies");
 
   // create an `aside` tag
+  const buddiesContainer = document.createElement("aside");
+  const buddiesUl = document.createElement("aside");
 
   // put an `unordered list` of the `'buddies'` in the aside
-
+  for (buddie of buddies) {
+    const li = document.createElement("li");
+    li.classList.add("buddies");
+    li.innerText = buddie;
+    buddiesUl.appendChild(li);
+  }
+  buddiesContainer.appendChild(buddiesUl);
   // insert your aside as a child element of `rivendell`
-
+  document.querySelector("#rivendell").appendChild(buddiesContainer);
 }
 
 // COMMIT YOUR WORK
