@@ -40,51 +40,46 @@ function makeMiddleEarth() {
   // 1. create a section tag with an id of middle-earth
   const middleEarth = document.createElement("section");
   middleEarth.setAttribute("id", "middle-earth");
-
   // 2. use a for loop to iterate over the lands array that does the following:
   for (let index = 0; index < lands.length; index++) {
   //   2a. creates an article tag (there should be one for each land when the loop is done)
       const article = document.createElement("article");
    //   2b. gives each land article an `id` tag of the corresponding land name
+
       article.setAttribute("id", lands[index]);
    //   2c. includes an h1 with the name of the land inside each land article
       article.innerHTML = `<h1>${lands[index]}</h1>`
  //   2d. appends each land to the middle-earth section
-      middleEarth.appendChild(article);
+      middleEarth.append(article);
   }
 
 // 3. append the section to the body of the DOM.
-document.body.appendChild(middleEarth);
+document.body.append(middleEarth);
 }
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 1 complete - Made Middle Earth".
-
+makeMiddleEarth()
 // ============
 // Chapter 2
 // ============
-
 function makeHobbits() {
   console.log("2: makeHobbits");
-
-  // display an `unordered list` of hobbits in the shire
-  const hobbits = document.createElement ("ul");
-  const shireCenter = document.getElementById("The-Shire");
-  shireCenter.appendChild(hobbits);
- // give each hobbit a class of `hobbit`
-  hobbits.setAttribute("class", "hobbit");
-  // hint: create a 'ul' outside the loop into which to append the 'li's
-
-  for (let index = 0; index < hobbits.length; index++) {
-    const liForHobbits = document.createElement("li");
-    liForHobbits.setAttribute("class", "hobbit");
-    liForHobbits.innerText = hobbits[index];
-    liForHobbits.appendChild(hobbits);
-    liForHobbits.appendChild(shireCenter);
+    // display an `unordered list` of hobbits in the shire
+    // hint: create a 'ul' outside the loop into which to append the 'li's
+  const unordered = document.createElement('ul')
+  for (let i = 0; i < hobbits.length; i++){
+  // give each hobbit a class of `hobbit`
+    const hobbitsli = document.createElement('li')
+    hobbitsli.setAttribute('class', 'hobbit')
+    hobbitsli.innerHTML = hobbits[i]
+    unordered.append(hobbitsli)
   }
- 
-  // hint: get 'The-Shire' by using its id
+    // hint: get 'The-Shire' by using its id
+  const shire = document.getElementById('The-Shire')
+  shire.append(unordered)
 }
+makeHobbits()
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
 
