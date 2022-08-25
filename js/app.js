@@ -59,7 +59,7 @@ document.body.append(middleEarth);
 
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 1 complete - Made Middle Earth".
-makeMiddleEarth()
+//makeMiddleEarth()
 // ============
 // Chapter 2
 // ============
@@ -79,7 +79,7 @@ function makeHobbits() {
   const shire = document.getElementById('The-Shire')
   shire.append(unordered)
 }
-makeHobbits()
+//makeHobbits()
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 2 complete - Made the Hobbits".
 
@@ -90,13 +90,15 @@ makeHobbits()
 
 function keepItSecretKeepItSafe() {
   console.log("3: keepItSecretKeepItSafe");
-
+  const ring = document.createElement('div')
   // create a div with an id of `'the-ring'`
-
+  ring.setAttribute('id', 'the-ring')
   // give the div a class of `'magic-imbued-jewelry'`
-
+  ring.setAttribute('class','magic-imbued-jewelry')
   // add the ring as a child of `Frodo`
-
+  const hobbits = document.querySelectorAll('.hobbit')
+  const frodo = hobbits[0]
+  frodo.appendChild(ring)
 }
 
 // COMMIT YOUR WORK
@@ -109,13 +111,18 @@ function keepItSecretKeepItSafe() {
 
 function makeBaddies() {
   console.log("4: makeBaddies");
-
+  const unordered = document.createElement('ul')
   // display an unordered list of baddies in Mordor
-
-  // give each of the baddies a class of "baddy"
-
+  for (let i = 0; i < baddies.length; i++){
+    const badGuys = document.createElement('li')
+    badGuys.innerHTML = baddies[i]
+    // give each of the baddies a class of "baddy"
+    badGuys.setAttribute('class', 'baddy')
+    unordered.append(badGuys)
+  }
   // remember to append them to Mordor
-
+  const mordor = document.querySelector('#Mordor')
+  mordor.append(unordered)
 }
 
 // COMMIT YOUR WORK
