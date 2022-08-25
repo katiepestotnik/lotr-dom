@@ -135,13 +135,20 @@ function makeBaddies() {
 
 function makeBuddies() {
   console.log("5: makeBuddies");
-
-  // create an `aside` tag
-
+    // create an `aside` tag
+  const aside = document.createElement('aside')
   // put an `unordered list` of the `'buddies'` in the aside
-
+  const unordered = document.createElement('ul')
+  for (let i = 0; i < buddies.length; i++){
+    const buds = document.createElement('li')
+    buds.setAttribute('class', 'fellows')
+    buds.innerHTML = buddies[i]
+    unordered.append(buds)
+  }
+  aside.append(unordered)
   // insert your aside as a child element of `rivendell`
-
+  const rivendell = document.querySelector('#Rivendell')
+  rivendell.append(aside)
 }
 
 // COMMIT YOUR WORK
@@ -154,10 +161,13 @@ function makeBuddies() {
 
 function leaveTheShire() {
   console.log("6: leaveTheShire");
-
   // assemble the `hobbits` and move them to `rivendell`
+  const hobbitsDOM = document.querySelectorAll('.hobbit')
+  const rivendell = document.querySelector('aside > ul')
+  for (let i = 0; i < hobbitsDOM.length; i++){
+    rivendell.append(hobbitsDOM[i])
+  }
 }
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 6 complete - Left the Shire"
 
@@ -168,8 +178,9 @@ function leaveTheShire() {
 
 function beautifulStranger() {
   console.log("7: beautifulStranger");
-
+  const strider = document.querySelectorAll('.fellows')
   // change the `'Strider'` text to `'Aragorn'`
+  strider[3].innerHTML = 'Aragorn'
 }
 
 // COMMIT YOUR WORK
@@ -182,6 +193,19 @@ function beautifulStranger() {
 
 function forgeTheFellowShip() {
   console.log("8: forgeTheFellowShip");
+  const fellowship = document.createElement('div')
+  fellowship.setAttribute('id', 'the-fellowship')
+  const buds = document.querySelectorAll('.fellows')
+  for (let i = 0; i < buds.length; i++){
+    fellowship.append(buds[i])
+  }
+  const hobbits = document.querySelectorAll('.hobbit')
+  for (let i = 0; i < hobbits.length; i++){
+    fellowship.append(hobbits[i])
+  }
+  const rivendell = document.querySelector('#Rivendell')
+  rivendell.append(fellowship)
+  alert('Fellowship forged!')
   // create a new div called `'the-fellowship'` within `rivendell`
   // add each `hobbit` and `buddy` one at a time to `'the-fellowship'`
   // after each character is added make an alert that they // have joined your party
