@@ -243,7 +243,7 @@ function theBalrog() {
 function hornOfGondor() {
   console.log("10: hornOfGondor");
     // pop up an alert that the horn of gondor has been blown
-  alert('Horn of gonder has sounded!')
+  alert('Horn of Gonder has sounded!')
   // Boromir's been killed by the Uruk-hai!
   alert('Boromir has been killed by the Uruk-hai')
   // Remove `Boromir` from the Fellowship
@@ -265,7 +265,7 @@ function itsDangerousToGoAlone() {
   const hobs = document.querySelectorAll('.hobbit')
   const frodo = hobs[0]
   const sam = hobs[1]
-  const mordor = document.querySelector('#Mordor > ul')
+  const mordor = document.querySelector('#Mordor')
   mordor.append(frodo)
   mordor.append(sam)
   // add a div with an id of `'mount-doom'` to `Mordor`
@@ -273,8 +273,6 @@ function itsDangerousToGoAlone() {
   mountDoom.setAttribute('id', 'mount-doom')
   mordor.append(mountDoom)
 }
-
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 11 complete - Sam and Frodo are in Mordor and Mount Doom has been created"
 
@@ -286,11 +284,17 @@ function itsDangerousToGoAlone() {
 function weWantsIt() {
   console.log("12: weWantsIt");
   // Create a div with an id of `'gollum'` and add it to Mordor
+  const gollum = document.createElement('div')
+  gollum.setAttribute('id', 'gollum')
+  const mordor = document.querySelector('#Mordor')
+  mordor.append(gollum)
   // Remove `the ring` from `Frodo` and give it to `Gollum`
+  const ring = document.querySelector('#the-ring')
+  gollum.append(ring)
   // Move Gollum into Mount Doom
+  const mountDoom = document.querySelector('#mount-doom')
+  mountDoom.append(gollum)
 }
-
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 12 complete - Gollum is trying to get the ring".
 
@@ -301,7 +305,16 @@ function weWantsIt() {
 function thereAndBackAgain() {
   console.log("13: thereAndBackAgain");
   // remove `Gollum` and `the Ring` from the document
+  const ring = document.querySelector('#the-ring')
+  const gollum = document.querySelector('#gollum')
+  ring.remove()
+  gollum.remove()
   // Move all the `hobbits` back to `the shire`
+  const shire = document.querySelector('#The-Shire')
+  const hobs = document.querySelectorAll('.hobbit')
+  for (let i = 0; i < hobs.length; i++){
+    shire.append(hobs[i])
+  }
 }
 
 // COMMIT YOUR WORK
