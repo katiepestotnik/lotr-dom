@@ -224,7 +224,12 @@ function forgeTheFellowShip() {
 function theBalrog() {
   console.log("9: theBalrog");
   // change the `'Gandalf'` text to `'Gandalf the White'`
+  const gandalf = document.querySelectorAll('.fellows')
+  const newGandalf = gandalf[0]
+  newGandalf.innerHTML = 'Gandalf the White'
   // apply the following style to the element, make the // background 'white', add a grey border
+  newGandalf.style.backgroundColor = 'white'
+  newGandalf.style.border = '4px solid grey'
 }
 
 // COMMIT YOUR WORK
@@ -237,11 +242,15 @@ function theBalrog() {
 
 function hornOfGondor() {
   console.log("10: hornOfGondor");
-  // pop up an alert that the horn of gondor has been blown
+    // pop up an alert that the horn of gondor has been blown
+  alert('Horn of gonder has sounded!')
   // Boromir's been killed by the Uruk-hai!
+  alert('Boromir has been killed by the Uruk-hai')
   // Remove `Boromir` from the Fellowship
+  const buds = document.querySelectorAll('.fellows')
+  const boromir = buds[4]
+  boromir.remove()
 }
-
 // COMMIT YOUR WORK
 // The commit message should read: "Chapter 10 complete - horn of gandor blew and Boromir is dead"
 
@@ -253,7 +262,16 @@ function hornOfGondor() {
 function itsDangerousToGoAlone() {
   console.log("11: itsDangerousToGoAlone");
   // take `Frodo` and `Sam` out of the fellowship and move // them to `Mordor`
+  const hobs = document.querySelectorAll('.hobbit')
+  const frodo = hobs[0]
+  const sam = hobs[1]
+  const mordor = document.querySelector('#Mordor > ul')
+  mordor.append(frodo)
+  mordor.append(sam)
   // add a div with an id of `'mount-doom'` to `Mordor`
+  const mountDoom = document.createElement('div')
+  mountDoom.setAttribute('id', 'mount-doom')
+  mordor.append(mountDoom)
 }
 
 
